@@ -1,6 +1,6 @@
 {
   "name": "CodeQL Analysis",
   "description": "Automated security vulnerability scanning with CodeQL",
-  "iconName": "code-square",
+  "iconName": "octicon codescan",
   "categories": ["Security", "Code Scanning", "Code Quality"]
 }

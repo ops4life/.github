@@ -1,6 +1,6 @@
 {
   "name": "Gitleaks Secret Scanning",
   "description": "Scan for secrets and credentials in your codebase using Gitleaks",
-  "iconName": "shield-lock",
+  "iconName": "octicon shield-lock",
   "categories": ["Security", "Code Scanning"]
 }
