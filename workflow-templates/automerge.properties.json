@@ -1,0 +1,6 @@
+{
+  "name": "Auto-merge PRs",
+  "description": "Automatically merge pull requests from trusted bots (Dependabot, GitHub Actions)",
+  "iconName": "git-merge",
+  "categories": ["Automation", "Dependencies"]
+}
