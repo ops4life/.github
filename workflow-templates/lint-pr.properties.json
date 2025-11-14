@@ -1,6 +1,6 @@
 {
   "name": "PR Title Linting",
   "description": "Enforce conventional commit format for pull request titles",
-  "iconName": "checklist",
+  "iconName": "octicon checklist",
   "categories": ["Code Quality", "Automation"]
 }

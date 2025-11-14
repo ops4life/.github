@@ -1,6 +1,6 @@
 {
   "name": "Pre-commit CI",
   "description": "Run pre-commit hooks on pull requests and auto-commit fixes",
-  "iconName": "git-commit",
+  "iconName": "octicon git-commit",
   "categories": ["Code Quality", "Continuous Integration"]
 }

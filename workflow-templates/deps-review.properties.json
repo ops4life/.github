@@ -1,6 +1,6 @@
 {
   "name": "Dependency Review",
   "description": "Review and scan dependencies for security vulnerabilities and licensing issues",
-  "iconName": "package-dependencies",
+  "iconName": "octicon package-dependencies",
   "categories": ["Security", "Dependencies"]
 }
