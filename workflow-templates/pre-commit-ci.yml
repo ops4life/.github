@@ -1,0 +1,29 @@
+name: Pre-commit CI
+
+on:
+  pull_request_target:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/setup-python@v6
+      with:
+          python-version: '3.12'
+
+    - name: Install pre-commit
+      run: pip install pre-commit
+
+    - name: Run pre-commit
+      run: |
+        pre-commit install
+        pre-commit run --all-files
+
+    - uses: stefanzweifel/git-auto-commit-action@v7
+      if: always()
+      with:
+        commit_message: "fix: Automated Changes by Pre-commit"
