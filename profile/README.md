@@ -1,12 +1,38 @@
-## Hi there 👋
+# ops4life
 
-<!--
+Open-source resources for **DevOps**, **SRE**, and **Platform Engineering**.
 
-**Here are some ideas to get you started:**
+## What We Do
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+We build and share tools, workflows, and best practices to help teams:
+
+- Automate CI/CD pipelines with reusable GitHub Actions
+- Implement infrastructure as code patterns
+- Establish observability and reliability practices
+- Streamline platform operations
+
+## Repositories
+
+| Repository | Description |
+|------------|-------------|
+| [.github](https://github.com/ops4life/.github) | Reusable workflows, starter templates, and composite actions |
+
+## Tech Stack
+
+**CI/CD:** GitHub Actions, ArgoCD, Flux
+
+**Infrastructure:** Terraform, Pulumi, Crossplane
+
+**Containers:** Docker, Kubernetes, Helm
+
+**Observability:** Prometheus, Grafana, OpenTelemetry
+
+**Security:** Gitleaks, CodeQL, Trivy, Checkov
+
+## Contributing
+
+Contributions are welcome. Open an issue or submit a pull request in any repository.
+
+## License
+
+All projects are released under the [MIT License](https://opensource.org/licenses/MIT) unless otherwise specified.
