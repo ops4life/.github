@@ -13,7 +13,9 @@ We build and share tools, workflows, and best practices to help teams:
 
 ## 📦 Repositories
 
-Check out our public repositories below 👇
+| Repository | Description |
+|------------|-------------|
+| [✨ spark](https://github.com/ops4life/spark) | Share ideas, thoughts, and suggestions for the org |
 
 ## 🧰 Tech Stack
 
