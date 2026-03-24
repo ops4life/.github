@@ -23,6 +23,11 @@ We build and share tools, workflows, and best practices to help teams:
 | [🏗️ terraform-repo-template](https://github.com/ops4life/terraform-repo-template) | Production-ready Terraform template for AWS with CI/CD and security scanning |
 | [🐳 terraform-toolkit-docker](https://github.com/ops4life/terraform-toolkit-docker) | Docker image bundling Terraform, Terragrunt, Checkov, TFLint, Trivy, and more |
 | [🤖 claudekit](https://github.com/ops4life/claudekit) | Claude Code plugin for DevOps and SRE workflows |
+| [☸️ eks-iac-template](https://github.com/ops4life/eks-iac-template) | Production-ready EKS infrastructure template with Terraform, Kustomize, and CI/CD pipelines |
+| [🗺️ roadmaps](https://github.com/ops4life/roadmaps) | Interactive DevOps, DevSecOps, and MLOps roadmaps |
+| [💻 code-server](https://github.com/ops4life/code-server) | code-server Docker image with development tools |
+| [🤖 mlops-get-started](https://github.com/ops4life/mlops-get-started) | Code snippets for MLOps guides—practical examples for DevOps engineers |
+| [⚙️ .github](https://github.com/ops4life/.github) | Organization-wide GitHub Actions workflows, templates, and composite actions |
 
 ## 🧰 Tech Stack
 
