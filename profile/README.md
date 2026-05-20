@@ -1,50 +1,59 @@
-# 🚀 ops4life
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ops4life/.github/main/banner.svg" alt="ops4life Banner" width="800">
+  <br>
+  <h1>ops4life</h1>
+  <p><strong>Ops at Scale. Shared for Life.</strong></p>
 
-Open-source resources for **DevOps**, **SRE**, and **Platform Engineering**.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-C0FF00?labelColor=000000)](https://github.com/ops4life/.github/blob/main/LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-DevOps%20%7C%20SRE-C0FF00?labelColor=000000)](#)
+  [![Stack](https://img.shields.io/badge/Stack-K8s%20%7C%20Terraform%20%7C%20Actions-C0FF00?labelColor=000000)](#)
+</div>
 
-## 🛠️ What We Do
+---
 
-We build and share tools, workflows, and best practices to help teams:
+## 🚀 Our Mission
 
-- ⚙️ Automate CI/CD pipelines with reusable GitHub Actions
-- 🏗️ Implement infrastructure as code patterns
-- 📊 Establish observability and reliability practices
-- 🔧 Streamline platform operations
+**ops4life** is an open-source collective focused on high-performance operations. We build and share the tools, patterns, and workflows we use to scale modern platforms.
 
-## 📦 Repositories
+- ⚙️ **Automation** - Robust CI/CD and task orchestration.
+- 🏗️ **Infrastructure** - Production-ready IaC patterns (Terraform, K8s).
+- 📊 **Reliability** - SRE-first observability and engineering.
+- 🛡️ **Security** - Integrated DevSecOps by default.
 
-| Repository | Description |
-|------------|-------------|
-| [✨ spark](https://github.com/ops4life/spark) | Share ideas, thoughts, and suggestions for ops4life |
-| [🔐 kubeseal-vscode](https://github.com/ops4life/kubeseal-vscode) | Kubeseal integration for VS Code - Encrypt and decrypt Kubernetes secrets |
-| [🔄 awsp](https://github.com/ops4life/awsp) | Tiny cross-shell function to switch AWS profiles |
-| [☁️ aws-terraform-ado](https://github.com/ops4life/aws-terraform-ado) | Structured Terraform template for AWS deployments on Azure Pipeline |
-| [📋 github-repo-template](https://github.com/ops4life/github-repo-template) | Template repository with GitHub best practices, CI/CD workflows, and security |
-| [🏗️ terraform-repo-template](https://github.com/ops4life/terraform-repo-template) | Production-ready Terraform template for AWS with CI/CD and security scanning |
-| [🐳 terraform-toolkit-docker](https://github.com/ops4life/terraform-toolkit-docker) | Docker image bundling Terraform, Terragrunt, Checkov, TFLint, Trivy, and more |
-| [🤖 claudekit](https://github.com/ops4life/claudekit) | Claude Code plugin for DevOps and SRE workflows |
-| [☸️ eks-iac-template](https://github.com/ops4life/eks-iac-template) | Production-ready EKS infrastructure template with Terraform, Kustomize, and CI/CD pipelines |
-| [🗺️ roadmaps](https://github.com/ops4life/roadmaps) | Interactive DevOps, DevSecOps, and MLOps roadmaps |
-| [💻 code-server](https://github.com/ops4life/code-server) | code-server Docker image with development tools |
-| [🤖 mlops-get-started](https://github.com/ops4life/mlops-get-started) | Code snippets for MLOps guides—practical examples for DevOps engineers |
-| [⚙️ .github](https://github.com/ops4life/.github) | Organization-wide GitHub Actions workflows, templates, and composite actions |
+---
+
+## 📂 Featured Repositories
+
+### 🛠️ Tools & CLI
+- **[🤖 claudekit](https://github.com/ops4life/claudekit)** - Claude Code plugin for DevOps/SRE workflows.
+- **[🔄 awsp](https://github.com/ops4life/awsp)** - Fast AWS profile switching for your shell.
+- **[🔐 kubeseal-vscode](https://github.com/ops4life/kubeseal-vscode)** - Kubernetes secret management for VS Code.
+- **[🐳 terraform-toolkit](https://github.com/ops4life/terraform-toolkit-docker)** - All-in-one DevOps Docker image.
+
+### 🏗️ Infrastructure & Templates
+- **[☸️ eks-iac-template](https://github.com/ops4life/eks-iac-template)** - Comprehensive EKS + Terraform blueprint.
+- **[🏗️ terraform-template](https://github.com/ops4life/terraform-repo-template)** - Standardized AWS Terraform project structure.
+- **[📋 github-template](https://github.com/ops4life/github-repo-template)** - Organization best-practices for new repos.
+- **[⚙️ .github](https://github.com/ops4life/.github)** - Central org-wide workflows and config.
+
+### 📚 Learning & Community
+- **[🗺️ roadmaps](https://github.com/ops4life/roadmaps)** - Career paths for DevOps, SRE, and MLOps.
+- **[🤖 mlops-guides](https://github.com/ops4life/mlops-get-started)** - Practical MLOps implementation examples.
+- **[✨ spark](https://github.com/ops4life/spark)** - Where new ideas and community feedback ignite.
+
+---
 
 ## 🧰 Tech Stack
 
-**CI/CD:** GitHub Actions, ArgoCD, Flux
-
-**Infrastructure:** Terraform, Pulumi, Crossplane
-
-**Containers:** Docker, Kubernetes, Helm
-
+**CI/CD:** GitHub Actions, ArgoCD, Flux  
+**Infrastructure:** Terraform, Kubernetes, Helm, Pulumi  
+**Security:** Gitleaks, CodeQL, Trivy, Checkov  
 **Observability:** Prometheus, Grafana, OpenTelemetry
 
-**Security:** Gitleaks, CodeQL, Trivy, Checkov
+---
 
-## 🤝 Contributing
+## 🤝 Join Us
 
-Contributions are welcome! Open an issue or submit a pull request in any repository.
+We believe in open operations. Contributions, issues, and discussions are welcome across all our projects.
 
-## 📄 License
-
-All projects are released under the [MIT License](https://opensource.org/licenses/MIT) unless otherwise specified.
+[Explore all repositories →](https://github.com/orgs/ops4life/repositories)
