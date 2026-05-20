@@ -56,7 +56,7 @@ Explore our ecosystem of open-source tools, templates, and learning resources.
 ### 🛠️ Tools & CLI
 | Repository | Description |
 | :--- | :--- |
-| **[🤖 claudekit](https://github.com/ops4life/claudekit)** | Production-ready DevOps superpowers for everyone. |
+| **[🤖 claude4ops](https://github.com/ops4life/claude4ops)** | Production-ready DevOps superpowers for everyone. |
 | **[🔄 awsp](https://github.com/ops4life/awsp)** | Tiny cross-shell function to switch AWS profiles effortlessly. |
 | **[🔐 kubeseal-vscode](https://github.com/ops4life/kubeseal-vscode)** | VS Code integration for encrypting/decrypting Kubernetes secrets. |
 | **[🐳 terraform-toolkit](https://github.com/ops4life/terraform-toolkit-docker)** | Docker image with Terraform, Terragrunt, Checkov, and more. |
