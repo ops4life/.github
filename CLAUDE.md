@@ -1,25 +1,24 @@
-# CLAUDE.md
+# CLAUDE.md - ops4life 🚀
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with the **ops4life** centralized configuration hub.
 
-## Repository Purpose
+## 🌟 Mission: Ops at Scale. Shared for Life.
 
-This repository provides centralized GitHub Actions resources for the organization:
+**ops4life** is an open-source collective focused on high-performance operations, SRE, and platform engineering. This repository (`.github`) acts as the central hub for organization-wide resources:
 
-1. **Reusable workflows** - Common CI/CD patterns that can be called from other workflows
-2. **Starter workflow templates** - Templates available when creating new workflows in repositories
-3. **Shared composite actions** - Reusable action definitions for repeated step sequences
+1.  **Org-wide Configuration** - Shared settings, profile documentation, and branding.
+2.  **Starter Workflow Templates** - Templates available when creating new workflows in organization repositories.
+3.  **Reusable Workflows** - Common CI/CD patterns (GitHub Actions) callable from other repos.
+4.  **Composite Actions** - Reusable action definitions for grouping repeated step sequences.
 
-## Repository Structure
+## 🏗️ Repository Structure
 
-Currently minimal:
-- `LICENSE` - MIT License
-- `README.md` - Basic repository description
-
-Expected directory structure:
-- `workflow-templates/` - Starter templates for new repositories
-- `.github/workflows/` - Reusable workflows that can be called from other repos
-- `.github/actions/` - Composite actions for shared step sequences
+- `profile/` - Contains the organization's public landing page (`README.md`).
+- `workflow-templates/` - Starter templates for new repositories.
+- `.github/workflows/` - Reusable workflows callable from other repos.
+- `.github/actions/` - Composite actions for shared step sequences.
+- `README.md` - Central gateway to the organization's ecosystem.
+- `banner.svg` - The branded visual identity.
 
 ## Component Structure
 
