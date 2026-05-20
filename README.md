@@ -1,74 +1,95 @@
-# .github
+<div align="center">
+  <img src="banner.svg" alt="ops4life Banner" width="800">
+  <br>
+  <h1>ops4life</h1>
+  <p><strong>Ops at Scale. Shared for Life.</strong></p>
 
-Organization-wide GitHub Actions resources for centralized CI/CD workflows and automation.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-C0FF00?labelColor=000000)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-DevOps%20%7C%20SRE-C0FF00?labelColor=000000)](#)
+  [![Stack](https://img.shields.io/badge/Stack-K8s%20%7C%20Terraform%20%7C%20Actions-C0FF00?labelColor=000000)](#)
+</div>
 
-## Purpose
+---
 
-This repository provides:
+## 🚀 The ops4life Mission
 
-1. **Workflow Templates** - Starter templates for new repositories
-2. **Reusable Workflows** - Common CI/CD patterns callable from other repos
-3. **Composite Actions** - Shared action definitions for repeated steps
+**ops4life** is dedicated to building and sharing high-quality tools, workflows, and best practices to help engineering teams scale their operations. We focus on:
 
-## Available Workflow Templates
+- ⚙️ **Automation** - Robust CI/CD pipelines and task automation.
+- 🏗️ **Infrastructure as Code** - Standardized patterns for cloud and on-prem.
+- 📊 **Observability** - Deep insights into system health and performance.
+- 🛡️ **Security** - Integrated DevSecOps practices.
 
-The following templates are available when creating new workflows in organization repositories:
+---
 
-### Security
+## 📁 This Repository (`.github`)
 
-- **Gitleaks** - Secret scanning to detect exposed credentials
-- **CodeQL Analysis** - Automated vulnerability detection for JavaScript and Python
-- **Dependency Review** - Security and license scanning for dependencies
+This specific repository acts as the **central configuration hub** for the ops4life organization. It contains:
 
-### Code Quality
+### 📦 Key Components
 
-- **PR Title Linting** - Enforce conventional commit format for pull requests
-- **Pre-commit CI** - Run pre-commit hooks and auto-commit fixes
+1.  **[Workflow Templates](workflow-templates/)** - Standardized starter templates for new repositories.
+2.  **Reusable Workflows** - Common CI/CD patterns (GitHub Actions) used across the org.
+3.  **Organization Profile** - The public landing page for our GitHub organization.
 
-### Automation
+---
 
-- **Auto-merge PRs** - Automatically merge pull requests from trusted bots (Dependabot, GitHub Actions)
+## 🛡️ Available Resources (GitHub Actions)
 
-## Usage
+Enable these templates when creating new workflows in your repositories:
 
-### Using Workflow Templates
+### 🔒 Security & Compliance
+-   **Gitleaks** - Secret scanning to detect and prevent exposed credentials.
+-   **CodeQL Analysis** - Advanced semantic analysis for vulnerability detection.
+-   **Dependency Review** - Security and license scanning for project dependencies.
 
-1. Go to any repository in the organization
-2. Navigate to **Actions** → **New workflow**
-3. Find templates under "Workflows created by [organization]"
-4. Click "Set up this workflow" to add it to your repository
+### 💎 Code Quality
+-   **PR Title Linting** - Enforces conventional commit format for clean history.
+-   **Pre-commit CI** - Automated enforcement of pre-commit hooks.
 
-### Calling Reusable Workflows
+---
 
-```yaml
-jobs:
-  call-workflow:
-    uses: org-name/.github/.github/workflows/<workflow-name>.yml@main
-    with:
-      input-name: value
-    secrets:
-      secret-name: ${{ secrets.SECRET_NAME }}
-```
+## 📂 Public Repositories
 
-### Using Composite Actions
+Explore our ecosystem of open-source tools, templates, and learning resources.
 
-```yaml
-steps:
-  - uses: org-name/.github/.github/actions/<action-name>@main
-    with:
-      input-name: value
-```
+### 🛠️ Tools & CLI
+| Repository | Description |
+| :--- | :--- |
+| **[🤖 claudekit](https://github.com/ops4life/claudekit)** | Claude Code plugin for DevOps and SRE workflows. |
+| **[🔄 awsp](https://github.com/ops4life/awsp)** | Tiny cross-shell function to switch AWS profiles effortlessly. |
+| **[🔐 kubeseal-vscode](https://github.com/ops4life/kubeseal-vscode)** | VS Code integration for encrypting/decrypting Kubernetes secrets. |
+| **[🐳 terraform-toolkit](https://github.com/ops4life/terraform-toolkit-docker)** | Docker image with Terraform, Terragrunt, Checkov, and more. |
+| **[💻 code-server](https://github.com/ops4life/code-server)** | Specialized code-server image with pre-installed DevOps tools. |
 
-## Contributing
+### 🏗️ Infrastructure & Templates
+| Repository | Description |
+| :--- | :--- |
+| **[☸️ eks-iac-template](https://github.com/ops4life/eks-iac-template)** | Production-ready EKS infrastructure with Terraform and Kustomize. |
+| **[🏗️ terraform-template](https://github.com/ops4life/terraform-repo-template)** | AWS Terraform template with integrated CI/CD and security. |
+| **[☁️ aws-terraform-ado](https://github.com/ops4life/aws-terraform-ado)** | Structured Terraform patterns for Azure DevOps pipelines. |
+| **[📋 github-template](https://github.com/ops4life/github-repo-template)** | Best-practice template for new GitHub repositories. |
+| **[⚙️ .github](https://github.com/ops4life/.github)** | (This repo) Org-wide workflows, templates, and config. |
 
-When adding new templates or workflows:
+### 📚 Learning & Community
+| Repository | Description |
+| :--- | :--- |
+| **[🗺️ roadmaps](https://github.com/ops4life/roadmaps)** | Interactive roadmaps for DevOps, DevSecOps, and MLOps. |
+| **[🤖 mlops-guides](https://github.com/ops4life/mlops-get-started)** | Practical examples and code snippets for MLOps practitioners. |
+| **[✨ spark](https://github.com/ops4life/spark)** | Community hub for ideas, feedback, and organizational suggestions. |
 
-1. Follow the directory structure outlined in `CLAUDE.md`
-2. Include both `.yml` and `.properties.json` files for templates
-3. Use `$default-branch` template variable for branch references
-4. Test in a repository before committing
-5. Use conventional commits for changes (feat, fix, docs, etc.)
+---
 
-## License
+## 🤝 Community & Contributing
 
-MIT License - See [LICENSE](LICENSE) for details
+We are a community-driven organization. Whether you're fixing a bug, adding a feature, or sharing a new DevOps pattern, we welcome your contributions!
+
+1.  Check [CLAUDE.md](CLAUDE.md) for technical guidelines.
+2.  Visit our [Organization Profile](profile/README.md) for a full list of repositories.
+3.  Follow [Conventional Commits](https://www.conventionalcommits.org/).
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
