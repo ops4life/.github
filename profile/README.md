@@ -25,7 +25,7 @@
 ## 📂 Featured Repositories
 
 ### 🛠️ Tools & CLI
-- **[🤖 claudekit](https://github.com/ops4life/claudekit)** - Claude Code plugin for DevOps/SRE workflows.
+- **[🤖 claudekit](https://github.com/ops4life/claudekit)** - Production-ready DevOps superpowers for everyone.
 - **[🔄 awsp](https://github.com/ops4life/awsp)** - Fast AWS profile switching for your shell.
 - **[🔐 kubeseal-vscode](https://github.com/ops4life/kubeseal-vscode)** - Kubernetes secret management for VS Code.
 - **[🐳 terraform-toolkit](https://github.com/ops4life/terraform-toolkit-docker)** - All-in-one DevOps Docker image.
