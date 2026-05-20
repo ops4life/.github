@@ -1,7 +1,7 @@
 <div align="center">
   <img src="banner.svg" alt="ops4life Banner" width="800">
   <br>
-  <h1>ops4life</h1>
+  <h1>Welcome to ops4life 🚀</h1>
   <p><strong>Ops at Scale. Shared for Life.</strong></p>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-C0FF00?labelColor=000000)](LICENSE)
