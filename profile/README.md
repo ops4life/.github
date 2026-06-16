@@ -26,6 +26,7 @@
 
 ### 🛠️ Tools & CLI
 - **[🤖 claude4ops](https://github.com/ops4life/claude4ops)** - Production-ready DevOps superpowers for everyone.
+- **[📊 sre-framework](https://github.com/ops4life/sre-framework)** - Config-driven, Prometheus-native SRE dashboard for SLO tracking and golden signals.
 - **[🔄 awsp](https://github.com/ops4life/awsp)** - Fast AWS profile switching for your shell.
 - **[🔐 kubeseal-vscode](https://github.com/ops4life/kubeseal-vscode)** - Kubernetes secret management for VS Code.
 - **[🐳 terraform-toolkit](https://github.com/ops4life/terraform-toolkit-docker)** - All-in-one DevOps Docker image.
