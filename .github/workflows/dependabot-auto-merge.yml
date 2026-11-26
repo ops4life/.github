@@ -1,0 +1,98 @@
+name: Dependabot auto-merge (reusable)
+
+# Merges the caller repo's open Dependabot PRs that are green and only bump a minor or patch version.
+# Each repo calls this from its own .github/workflows/dependabot-auto-merge.yml (workflow_run on its CI,
+# hourly, workflow_dispatch) with `secrets: inherit`. Those events run the default branch's workflow with
+# Actions secrets, unlike pull_request_target runs started by Dependabot, which only get Dependabot secrets.
+# No PR code is checked out or run. Gates, all fail closed:
+#   - author dependabot[bot], not a draft, head branch in the same repo
+#   - every version change ("from X to Y") in the title and in the body lines Dependabot writes itself
+#     ("Bumps ...", "Updates ..."; release notes are ignored) keeps the same major; none parsable = skip
+#   - every current check finished green (newest run per check; this caller's own run and runs of deleted
+#     workflows ignored); no checks at all = skip
+#   - the merge is pinned to the head SHA that was checked (--match-head-commit)
+# Merges as the ops4life-otto App; --admin only when GitHub reports the PR BLOCKED (the App is a bypass
+# actor for the code-owner review rule), after the checks above have passed.
+on:
+  workflow_call:
+    inputs:
+      dry-run:
+        description: Log what would merge, merge nothing
+        type: boolean
+        default: false
+    secrets:
+      GH_APP_CLIENT_ID:
+        required: true
+      GH_APP_PRIVATE_KEY:
+        required: true
+
+permissions: {}
+
+jobs:
+  merge:
+    runs-on: self-hosted
+    timeout-minutes: 15
+    steps:
+      - uses: actions/create-github-app-token@v3.4.0
+        id: token
+        with:
+          client-id: ${{ secrets.GH_APP_CLIENT_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Merge green minor/patch Dependabot PRs
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          REPO: ${{ github.repository }}
+          SELF_WORKFLOW: ${{ github.workflow }}
+          DRY_RUN: ${{ inputs.dry-run }}
+        run: |
+          set -euo pipefail
+
+          # Same major on both sides of every "from X to Y"; exit 1 otherwise, or when there is none.
+          minor_or_patch() {
+            local pairs
+            pairs="$(grep -oE 'from[[:space:]]+`?v?[0-9]+[^[:space:]`]*`?[[:space:]]+to[[:space:]]+`?v?[0-9]+' <<<"$1" \
+              | sed -E 's/^from[[:space:]]+`?v?([0-9]+).*[[:space:]]to[[:space:]]+`?v?([0-9]+)$/\1 \2/')" || return 1
+            [ -n "$pairs" ] || return 1
+            ! awk '$1 != $2 { found = 1 } END { exit !found }' <<<"$pairs"
+          }
+
+          live="$(gh api "repos/$REPO/actions/workflows?per_page=100" --jq '[.workflows[] | select(.state == "active") | .name]')"
+          meta="$(gh api "repos/$REPO")"
+          if jq -e .allow_squash_merge <<<"$meta" >/dev/null; then method=squash
+          elif jq -e .allow_merge_commit <<<"$meta" >/dev/null; then method=merge
+          else method=rebase; fi
+
+          prs="$(gh api "repos/$REPO/pulls?state=open&per_page=100" --jq '.[]
+            | select(.user.login == "dependabot[bot]" and .draft == false and .head.repo.full_name == .base.repo.full_name)
+            | .number')"
+          [ -n "$prs" ] || { echo "no open Dependabot PRs"; exit 0; }
+
+          for pr in $prs; do
+            view="$(gh pr view "$pr" --repo "$REPO" --json title,body,headRefOid,mergeStateStatus,statusCheckRollup)"
+            sha="$(jq -r .headRefOid <<<"$view")"
+            # title + Dependabot's own summary lines; quoted release notes mention unrelated versions
+            summary="$(jq -r .title <<<"$view"; jq -r '.body // ""' <<<"$view" | grep -E '^(Bumps|Updates) ' || true)"
+            if ! minor_or_patch "$summary"; then
+              echo "#$pr skipped: major bump or version not parsable"; continue
+            fi
+            green="$(jq --arg self "$SELF_WORKFLOW" --argjson live "$live" '
+              [.statusCheckRollup[]
+                | select((.workflowName // "") != $self)
+                | select((.workflowName // "") == "" or (.workflowName | IN($live[])))]
+              | group_by([.workflowName // "", .name // .context // ""])
+              | map(max_by(.startedAt // "~"))
+              | length > 0 and all(if has("state") then .state == "SUCCESS"
+                  else .status == "COMPLETED" and (.conclusion | IN("SUCCESS", "NEUTRAL", "SKIPPED")) end)' <<<"$view")"
+            if [ "$green" != true ]; then
+              echo "#$pr skipped: checks pending, failed or none"; continue
+            fi
+            flags=(--"$method" --match-head-commit "$sha")
+            [ "$(jq -r .mergeStateStatus <<<"$view")" = BLOCKED ] && flags+=(--admin)
+            if [ "$DRY_RUN" = true ]; then echo "#$pr would merge: ${flags[*]}"; continue; fi
+            if gh pr merge "$pr" --repo "$REPO" "${flags[@]}"; then
+              echo "merged #$pr at ${sha:0:7}"
+            else
+              echo "::warning::#$pr: merge failed (behind main, conflict or a rule the App cannot bypass)"
+            fi
+          done
